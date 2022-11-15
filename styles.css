@@ -1,0 +1,133 @@
+:root {
+	--main-bg-color: #0d1d5c;	
+	--nav-bg-color: #dddddb;
+	--nav-hover-color: #681da8;
+	--purple-color: rgb(54, 6, 185);
+	--purple-light-color: #ab49cc;
+	--gray-color: #d2d2d2;
+	--dark-color: #7a7a7a;
+	--dark-shadow: #747474;
+	--hover-linkChannel-color: #d44865;
+	--visited-linkChannel-color: #3f8755;	
+	--bg-online-color: #b8da8d;
+	--hover-offline-color: #42f2f8;
+	--text-offline-color: #03060e;
+	--text-online-color: #03060e;	
+
+	--bg-offline-color: #69d5c7;
+		
+}
+body {	
+	background-color: var(--main-bg-color);
+	padding-top: 70px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+#title, #subtitle-heading {
+	color:#fff;
+	margin-top: 10px;
+}
+#title {
+	text-align: center;
+}
+#subtitle-heading {
+	text-align: left;	
+}
+nav {
+	padding-bottom: 20px;
+}
+.navbar-brand, .navbar-brand:hover { 
+	color:var(--nav-hover-color);
+}
+.nav-link:hover {
+	color: white !important;
+	text-decoration: none;
+} 
+#nav-online-icon {
+	color: var(--bg-online-color);
+	text-shadow: 1px 1px 5px var(--bg-online-color);
+}
+#nav-offline-icon {
+	color: var(--bg-offline-color);
+	text-shadow: 1px 1px 5px var(--bg-offline-color);
+}
+li a {
+    border-left: 1px solid rgba(0, 0, 0, 0.25);
+	padding-left: 5px !important;
+}
+.active, .nav-link:focus {
+	border-bottom: 2px solid var(--purple-color);	
+	color:var(--purple-color);
+}
+li a:hover:not(.active) {
+    background-color: var(--nav-hover-color);
+}
+
+#btn-menu {
+	border-color: var(--nav-hover-color);
+}
+
+#icon-menu {
+	color: var(--nav-hover-color) !important;
+}
+
+#btn-menu:focus {
+	box-shadow: 2px 3px 2px var(--nav-hover-color) !important;
+}
+
+#loading-image {
+	display: none;
+	color: white;
+	background-color: var(--dark-color);
+	margin-bottom: 15px;
+	margin-left: 35px;
+	padding-bottom: 15px;
+	padding-top: 10px;
+	border-radius: 10px;
+	box-shadow: 0 0 5px 2px var(--dark-shadow);
+	position: absolute;
+	z-index: 9999;	
+}
+.row-channel{
+	border-bottom: 2px solid var(--dark-color);
+	padding: 10px 5px;
+}
+.logo-channel {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	border: 2px solid var(--dark-color);
+	box-shadow: 0 0 5px 2px var(--gray-color);
+}
+.offline {
+	background-color: var(--bg-offline-color);
+	color: var(--text-offline-color);		
+}
+.online {
+	background-color: var(--bg-online-color);
+	color: var(--text-online-color);
+}
+.searchChannel{
+	background-color: var(--gray-color);
+	color: black;
+}
+.link-channel:link, .link-channel:visited, .link-channel:active {
+    text-decoration: none;
+	font-weight: 600;
+}
+.link-online, .link-offline {
+	color: var(--purple-color);
+}
+.link-online:hover, .link-offline:hover{
+	color: var(--hover-linkChannel-color);
+}
+.link-channel:visited {
+	color: var(--visited-linkChannel-color);
+}
+#name-channel, #streaming-channel {
+	line-height: 15px;	
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	text-align: center;
+  }
+
+  

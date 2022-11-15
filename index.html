@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="autor" content="Deisy Niño">
+    <meta name="description" content="Freecodecamp: Twitch TV Json API">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Twitch Tv API</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" integrity="sha384-xeJqLiuOvjUBq3iGOjvSQSIlwrpqjSHXpduPd6rQpuiM3f5/ijby8pCsnbu5S81n" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css" integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            
+            <h1 id="title"><img src="../image/logo-twitch-white.png" alt="logo-twitchtv" height="35"> Twitch Streamers</h1>
+            <div class="menu">
+                <nav class="navbar navbar-expand-lg"  style="background-color: #e3f2fd;">
+                    <div class="container-fluid">
+                      <button id="btn-menu" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                        <span id="icon-menu" class="navbar-toggler-icon"></span>
+                      </button>
+                      <a class="navbar-brand" href="#">Twitch Tv
+                        <i class="fa fa-tv" aria-hidden="true"></i>
+                      </a>                      
+                      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                        <ul id="navbar-list" class="navbar-nav me-auto mb-2 mb-lg-0">
+                          <li id="all" class="nav-item">
+                            <!--a class="nav-link active" aria-current="page" href="#">All</a-->
+                            <a  class="nav-link" href="#">All</a>
+                          </li>
+                          <li id="online" class="nav-item">
+                            <a  class="nav-link" href="#">Online
+                                <i id="nav-online-icon" class="fa fa-circle" aria-hidden="true"></i>
+                            </a>
+                          </li>
+                          <li id="offline" class="nav-item">
+                            <a  class="nav-link" href="#">Offline
+                                <i id="nav-offline-icon" class="fa fa-circle" aria-hidden="true"></i>
+                            </a>
+                          </li>
+                        </ul>
+                    
+                        <form class="d-flex" role="search">
+                          <!--input id="search-box" class="form-control me-2" type="search" placeholder="Search" aria-label="Search"-->
+                          <select id="search-box" name="search-box" class="form-control me-2" aria-label="Search">
+                            <option value="">Seleccione un Channel</option>
+                          </select>
+                          <button id="submit-button" class="btn btn-outline-success" type="submit">Search</button>                        
+                        </form> 
+                      </div>                     
+                    </div>
+                </nav>
+            </div>
+        </div>    
+        <div id="content-channels" class="container-fluid">
+          <h2 id="subtitle-heading">Channels: </h2>
+          <!--LOADING IMAGE-->
+          <div id="loading-image" class="col-md-9 col-sm-6 col-xs-6 text-center">
+          
+            <i style="font-size: 2em" class="fa fa-spinner" aria-hidden="true"></i> 
+            <span style="font-size: 0.8em">Loading...</span>
+          </div>
+
+          <div>
+            <div class="col-md-12" id="search-wrapper">                
+            </div>
+          </div>
+      
+          <div>
+            <div class="col-md-12" id="channels-wrapper">                    
+            </div>                
+          </div>
+
+        </div>                   
+        
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+	 crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <!--Version Jquery-->
+    <script type="text/javascript" src="../index.js"></script>
+    <!--Version Javascript simple nativo-->
+    <!--script type="text/javascript" src="../twitch.js"></script-->
+  </body>
+</html>
